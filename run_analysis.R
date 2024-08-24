@@ -1,3 +1,5 @@
+library(dplyr)
+
 ## set up all the paths to the files I need to import
 features_path <- './R/Coursera/UCI HAR Dataset/features.txt'
 activity_path <- './R/Coursera/UCI HAR Dataset/activity_labels.txt'
@@ -22,22 +24,22 @@ exercise <- rbind(test_exercise,train_exercise)
 
 ## read in the activity/exercise labels and use it as a lookup column for the exercise data
 activity <- read.csv(activity_path,header=FALSE,sep = ' ')
-exercise_data <- merge(exercise,activity,by.x = 'V1', by.y = 'V1', sort = FALSE)
+activity_data <- merge(exercise,activity,by.x = 'V1', by.y = 'V1', sort = FALSE)
 
 ## read in the measurement data for both the test and train set and combined them
 test_set <- read.csv(test_path,header=FALSE,sep = '')
 train_set <- read.csv(train_path,header=FALSE,sep = '')
 combined <- rbind(test_set,train_set)
 
-## combine the exercise data, the subject data, and the measurement data
-data <- cbind(exercise_data,subject,combined)
+## combine the activity data, the subject data, and the measurement data
+data <- cbind(subject,activity_data,combined)
 
-## read in the column header from features file (but remove the index column) and add headers for the exercise data and the subject data
+## read in the column header from features file (but remove the index column) and add headers for the activity data and the subject data
 features <- read.csv('./R/Coursera/UCI HAR Dataset/features.txt', header = FALSE, sep = '')[,2]
-header <- c('ExerciseId','ExerciseType','TestSubjectId',features)
+header <- c('TestSubjectId','ActivityId','ActivityType',features)
 
-## get the column index of columns we would like to keep, specifically the subject, exercise, and mean and standard deviation columns
-columnkeep <- grep('mean[a-zA-Z]*\\(|std|TestSubjectId|ExerciseType',header)
+## get the column index of columns we would like to keep, specifically the subject, activity, and mean and standard deviation columns
+columnkeep <- grep('mean[a-zA-Z]*\\(|std|TestSubjectId|ActivityType',header)
 
 ## use lapply to format the column headers, setting up proper format of mean and std
 ## translating the t and f at the start to Time and Frequency Domain Signal
@@ -57,15 +59,5 @@ colnames(data) <- unlist(lapply(header, function(x) {
 ## remove any columns that is not measuring the mean or standard deviation
 refined_data <- data[,columnkeep]
 
-## convert test subjects and exercise type to factor for separating data sets later
-refined_data$ExerciseType <- as.factor(refined_data$ExerciseType)
-refined_data$TestSubjectId <- as.factor(refined_data$TestSubjectId)
-
-## For this exercise, I decided to split data into separate tidy data sets for each exercise type rather than by subject
-tidy_datasets <- split(refined_data,refined_data$ExerciseType)
-Laying <- data.frame(tidy_datasets[1])[,-1]
-Sitting <- data.frame(tidy_datasets[2])[,-1]
-Standing <- data.frame(tidy_datasets[3])[,-1]
-Walking <- data.frame(tidy_datasets[4])[,-1]
-WalkingDownstairs <- data.frame(tidy_datasets[5])[,-1]
-WalkingUpstairs <- data.frame(tidy_datasets[6])[,-1]
+##create second tidy table that averages all metric columns by Test Subject Id and Activity Type
+tidydata <- refined_data %>% group_by(ActivityType,TestSubjectId) %>% summarise_all('mean')
