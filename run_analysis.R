@@ -56,6 +56,10 @@ colnames(data) <- unlist(lapply(header, function(x) {
 }
 )
 )
+
+##convert the activity names to lower case and remove the '_'
+data$ActivityType <- tolower(gsub('_',' ',data$ActivityType))
+
 ## remove any columns that is not measuring the mean or standard deviation
 refined_data <- data[,columnkeep]
 
