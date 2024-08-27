@@ -59,5 +59,12 @@ colnames(data) <- unlist(lapply(header, function(x) {
 ## remove any columns that is not measuring the mean or standard deviation
 refined_data <- data[,columnkeep]
 
-##create second tidy table that averages all metric columns by Test Subject Id and Activity Type
+## create second tidy table that averages all metric columns by Test Subject Id and Activity Type
 tidydata <- refined_data %>% group_by(ActivityType,TestSubjectId) %>% summarise_all('mean')
+
+## give updated column names post-summarizing the data
+colnames(tidydata) <- unlist(lapply(names(tidydata), function(x) {
+        x <- sub('Time','AvgTime',x)
+        x <- sub('Freq','AvgFreq',x)
+    }
+))
