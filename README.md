@@ -11,5 +11,7 @@ The script does the following steps:
 9. Add the column header for the subject and activity data with the measurement headers 
 10. Store the index of the columns we want to keep (i.e. means and std features + the subject and activity type columns) in columnkeep variable
 11. Use lapply to re-format the headers to tidy format and assign it as the column headers for the combined dataset from step 7
-12. Remove any columns we do not want using the columnkeep variable
-13. Create a second tidy dataset with summarized (mean) feature columns, grouped by activity type and subject 
+12. Convert the activity names to lower case and remove the '_'
+13. Remove any columns we do not want using the columnkeep variable
+14. Create a second tidy dataset with summarized (mean) feature columns, grouped by activity type and subject
+15. Give updated column names post-summarizing the data
