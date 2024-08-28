@@ -1,16 +1,17 @@
 Data Transformations:
-Reads in the test and train subject files together and combines them into a single dataset
-Reads in the test and train exercise files that denotes the numeric representation of the activity type for each observation and combines it into a single dataset
-Reads in the file the contains the lookup table for the activity type and joins it with the combined exercise file to get the type of activity for each observation
-Reads in the measurement datasets for both the test and train set and combines them into a single dataset
-Append by column the Activity Data, the Subject Data and the Measurement Data into a single dataset
-Read in the file with the measurement column header and removes the index column, leaving behind just the labels for the features
-Add the column header for the subject and activity data with the measurement headers
-Store the index of the columns we want to keep (i.e. means and std features + the subject and activity type columns) in columnkeep variable
-Use lapply to re-format the headers to tidy format and assign it as the column headers for the combined dataset from step 7
-Remove any columns we do not want using the columnkeep variable
-Create a second tidy dataset with summarized (mean) feature columns, grouped by activity type and subject
-Rename columns based on the summarized data
+1.Reads in the test and train subject files together and combines them into a single dataset
+2. Reads in the test and train exercise files that denotes the numeric representation of the activity type for each observation and combines it into a single dataset
+3. Reads in the file the contains the lookup table for the activity type and joins it with the combined exercise file to get the type of activity for each observation
+4. Reads in the measurement datasets for both the test and train set and combines them into a single dataset
+5. Append by column the Activity Data, the Subject Data and the Measurement Data into a single dataset
+6. Read in the file with the measurement column header and removes the index column, leaving behind just the labels for the features
+7. Add the column header for the subject and activity data with the measurement headers
+8. Store the index of the columns we want to keep (i.e. means and std features + the subject and activity type columns) in columnkeep variable
+9. Use lapply to re-format the headers to tidy format and assign it as the column headers for the combined dataset from step 7
+10. Convert the activity names to lower case and remove the '_'
+11. Remove any columns we do not want using the columnkeep variable
+12. Create a second tidy dataset with summarized (mean) feature columns, grouped by activity type and subject
+13. Give updated column names post-summarizing the data
 
 Codebook
 
