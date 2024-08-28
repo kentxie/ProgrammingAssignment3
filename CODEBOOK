@@ -1,0 +1,53 @@
+Codebook
+
+
+Type of activity taken by subject
+ID of the test subject
+Average Mean of Time Domain Signal Body Linear Acceleration through the X vector
+Average Mean of Time Domain Signal Body Linear Acceleration through the Y vector
+Average Mean of Time Domain Signal Body Linear Acceleration through the Z vector
+Average Standard Deviation of Time Domain Signal Body Linear Acceleration through the X vector
+Average Standard Deviation of Time Domain Signal Body Linear Acceleration through the Y vector
+Average Standard Deviation of Time Domain Signal Body Linear Acceleration through the Z vector
+Average Mean of Time Domain Signal Gravity Acceleration through the X vector
+Average Mean of Time Domain Signal Gravity Acceleration through the Y vector
+Average Mean of Time Domain Signal Gravity Acceleration through the Z vector
+Average Standard Deviation of Time Domain Signal Gravity Acceleration through the X vector
+Average Standard Deviation of Time Domain Signal Gravity Acceleration through the Y vector
+Average Standard Deviation of Time Domain Signal Gravity Acceleration through the Z vector
+Average Mean of Time Domain Signal Body Acceleration Jerk through the X vector
+Average Mean of Time Domain Signal Body Acceleration Jerk through the Y vector
+Average Mean of Time Domain Signal Body Acceleration Jerk through the Z vector
+Average Standard Deviation of Time Domain Signal Body Acceleration Jerk through the X vector
+Average Standard Deviation of Time Domain Signal Body Acceleration Jerk through the Y vector
+Average Standard Deviation of Time Domain Signal Body Acceleration Jerk through the Z vector
+Average Mean of Time Domain Signal Body Gyroscope through the X vector
+Average Mean of Time Domain Signal Body Gyroscope through the Y vector
+Average Mean of Time Domain Signal Body Gyroscope through the Z vector
+Average Standard Deviation of Time Domain Signal Body Gyroscope through the X vector
+Average Standard Deviation of Time Domain Signal Body Gyroscope through the Y vector
+Average Standard Deviation of Time Domain Signal Body Gyroscope through the Z vector
+Average Mean of Time Domain Signal Body Gyroscope Jerk through the X vector
+Average Mean of Time Domain Signal Body Gyroscope Jerk through the Y vector
+Average Mean of Time Domain Signal Body Gyroscope Jerk through the Z vector
+Average Standard Deviation of Time Domain Signal Body Gyroscope Jerk through the X vector
+Average Standard Deviation of Time Domain Signal Body Gyroscope Jerk through the Y vector
+Average Standard Deviation of Time Domain Signal Body Gyroscope Jerk through the Z vector
+Average Mean of Time Domain Signal Body Acceleration Magnitude 
+Average Standard Deviation of Time Domain Signal Body Acceleration Magnitude 
+Average Mean of Time Domain Signal Gravity Acceleration Magnitude 
+Average Standard Deviation of Time Domain Signal Gravity Acceleration Magnitude 
+Average Mean of Time Domain Signal Body Acceleration Jerk Magnitude 
+Average Standard Deviation of Time Domain Signal Body Acceleration Jerk Magnitude 
+Average Mean of Time Domain Signal Gyroscope Magnitude 
+Average Standard Deviation of Time Domain Signal Gyroscope Magnitude 
+Average Mean of Time Domain Signal Gyroscope Jerk Magnitude 
+Average Standard Deviation of Time Domain Signal Gyroscope Jerk Magnitude 
+Average Mean of Frequency Domain Signal Body Acceleration Jerk through the X vector
+Average Mean of Frequency Domain Signal Body Acceleration Jerk through the Y vector
+Average Mean of Frequency Domain Signal Body Acceleration Jerk through the Z vector
+Average Standard Deviation of Frequency Domain Signal Body Acceleration Jerk through the X vector
+Average Standard Deviation of Frequency Domain Signal Body Acceleration Jerk through the Y vector
+Average Standard Deviation of Frequency Domain Signal Body Acceleration Jerk through the Z vector
+Average Mean Frequency of Frequency Domain Signal Body Acceleration Jerk through the X vector
+Average Mean Frequency of Frequency Domain Signal Body Acceleration Jerk through the Y vector
